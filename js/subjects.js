@@ -396,3 +396,79 @@ String(s).padStart(2,"0")
 
 
 }
+const createBtn = document.getElementById("saveSubject");
+
+createBtn.onclick = () => {
+
+    const name =
+    document.getElementById("subjectName").value.trim();
+
+
+    const hours =
+    Number(document.getElementById("hours").value) || 0;
+
+
+    const minutes =
+    Number(document.getElementById("minutes").value) || 0;
+
+
+    const duration =
+    (hours * 3600) + (minutes * 60);
+
+
+
+    if(name === "" || duration <= 0){
+
+        alert(
+            currentLanguage === "ar"
+            ?
+            "أدخل اسم المادة والمدة"
+            :
+            "Enter subject name and duration"
+        );
+
+        return;
+    }
+
+
+
+    subjects.push({
+
+        id: Date.now(),
+
+        name:name,
+
+        duration:duration,
+
+        remaining:duration,
+
+        status:"waiting",
+
+        completed:false,
+
+        tasks:[]
+
+    });
+
+
+
+    saveSubjects();
+
+
+    renderSubjects();
+
+
+
+    document
+    .getElementById("addModal")
+    .classList
+    .add("hidden");
+
+
+
+    document.getElementById("subjectName").value="";
+    document.getElementById("hours").value="";
+    document.getElementById("minutes").value="";
+
+
+};
