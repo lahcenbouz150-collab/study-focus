@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Focus</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="bg-circle one"></div>
+<div class="bg-circle two"></div>
+
+
+<header>
+
+    <div class="logo">
+        🎓 Study Focus
+    </div>
+
+
+    <button id="languageBtn" class="glass-btn">
+        🌐 AR
+    </button>
+
+</header>
+
+
+
+<main>
+
+
+<section class="hero">
+
+    <h1 id="title">
+        Study Focus
+    </h1>
+
+    <p id="subtitle">
+        Stay focused. Finish your study sessions.
+    </p>
+
+</section>
+
+
+
+<section class="stats">
+
+
+<div class="stat-card">
+    <h2 id="totalSubjects">0</h2>
+    <span id="subjectsText">
+        Subjects
+    </span>
+</div>
+
+
+<div class="stat-card">
+    <h2 id="completedSubjects">0</h2>
+    <span>
+        Completed
+    </span>
+</div>
+
+
+<div class="stat-card">
+    <h2 id="activeSubjects">0</h2>
+    <span>
+        Active
+    </span>
+</div>
+
+
+<div class="stat-card">
+    <h2 id="totalStudyTime">
+        00:00
+    </h2>
+    <span>
+        Study Time
+    </span>
+</div>
+
+
+</section>
+
+
+
+
+<section id="subjectsContainer" class="subjects-container">
+
+</section>
+
+
+
+</main>
+
+
+
+<button id="addButton" class="floating-btn">
++
+</button>
+
+
+
+
+
+
+<!-- Add Subject Modal -->
+
+
+<div id="addModal" class="modal hidden">
+
+
+<div class="modal-box">
+
+
+<h2 id="modalTitle">
+Add Subject
+</h2>
+
+
+
+<input 
+id="subjectName"
+type="text"
+placeholder="Subject name">
+
+
+
+<div class="time-inputs">
+
+<input
+id="hours"
+type="number"
+min="0"
+placeholder="Hours">
+
+
+<input
+id="minutes"
+type="number"
+min="0"
+max="59"
+placeholder="Minutes">
+
+</div>
+
+
+
+<div class="modal-actions">
+
+
+<button id="closeModal">
+Cancel
+</button>
+
+
+<button id="saveSubject">
+Create
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Finish Modal -->
+
+
+<div id="finishModal" class="modal hidden">
+
+
+<div class="modal-box success">
+
+
+<h2>
+🎉
+</h2>
+
+
+<h2 id="finishTitle">
+Study Session Completed!
+</h2>
+
+
+<p id="finishText">
+Excellent work!
+</p>
+
+
+<button id="finishClose">
+Close
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Delete Modal -->
+
+
+<div id="deleteModal" class="modal hidden">
+
+
+<div class="modal-box">
+
+
+<h2>
+Delete Subject?
+</h2>
+
+
+<p>
+This action cannot be undone.
+</p>
+
+
+
+<div class="modal-actions">
+
+
+<button id="cancelDelete">
+Cancel
+</button>
+
+
+<button id="confirmDelete">
+Delete
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Subject Template -->
+
+
+<template id="subjectTemplate">
+
+
+<div class="subject-card">
+
+
+
+<div class="subject-header">
+
+
+<div>
+
+
+<h2 class="subject-name">
+
+</h2>
+
+
+<p class="status">
+
+Waiting
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="circle">
+
+
+<svg width="100" height="100">
+
+
+<circle
+cx="50"
+cy="50"
+r="42"
+class="circle-bg">
+</circle>
+
+
+<circle
+cx="50"
+cy="50"
+r="42"
+class="circle-progress">
+</circle>
+
+
+</svg>
+
+
+<span class="time">
+
+00:00:00
+
+</span>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="buttons">
+
+
+<button class="start">
+▶ Start
+</button>
+
+
+<button class="pause">
+⏸ Pause
+</button>
+
+
+<button class="resume">
+▶ Resume
+</button>
+
+
+<button class="reset">
+🔄 Reset
+</button>
+
+
+<button class="delete">
+🗑 Delete
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="todo">
+
+
+<h3>
+Todo
+</h3>
+
+
+<div class="todo-add">
+
+
+<input 
+class="taskInput"
+placeholder="New Task">
+
+
+<button class="addTask">
++
+</button>
+
+
+</div>
+
+
+
+<ul class="tasks">
+
+</ul>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</template>
+
+
+
+
+
+
+<audio id="alarm">
+
+<source src="sounds/alarm.mp3">
+
+</audio>
+
+
+
+
+
+<script src="js/storage.js"></script>
+<script src="js/language.js"></script>
+<script src="js/subjects.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
