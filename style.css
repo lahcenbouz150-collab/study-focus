@@ -1,0 +1,823 @@
+/* =====================================
+   Study Focus Premium UI
+   Glassmorphism + Apple Style
+===================================== */
+
+
+:root {
+
+    --bg: #0b1220;
+    --bg-secondary:#111827;
+
+    --card: rgba(30,41,59,.65);
+
+    --text:#f8fafc;
+    --muted:#94a3b8;
+
+    --primary:#3b82f6;
+    --primary-hover:#2563eb;
+
+    --success:#22c55e;
+    --warning:#f59e0b;
+    --danger:#ef4444;
+
+    --border:
+    rgba(255,255,255,.12);
+
+    --shadow:
+    0 25px 60px rgba(0,0,0,.35);
+
+    --radius:26px;
+
+    --transition:.35s ease;
+
+}
+
+
+
+
+/* Light Mode */
+
+body.light {
+
+    --bg:#f1f5f9;
+
+    --bg-secondary:#ffffff;
+
+    --card:
+    rgba(255,255,255,.7);
+
+    --text:#0f172a;
+
+    --muted:#475569;
+
+    --border:
+    rgba(0,0,0,.12);
+
+    --shadow:
+    0 20px 50px rgba(0,0,0,.15);
+
+}
+
+
+
+
+
+
+* {
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:
+    "Inter",
+    "Segoe UI",
+    sans-serif;
+
+}
+
+
+
+
+
+body {
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        #1d4ed8,
+        transparent 35%
+    ),
+    var(--bg);
+
+    color:var(--text);
+
+    transition:
+    background .5s,
+    color .5s;
+
+}
+
+
+
+
+
+/* Background Glow */
+
+
+.bg-circle {
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+    z-index:-1;
+
+}
+
+
+
+.one {
+
+    background:#3b82f6;
+
+    top:-100px;
+
+    left:-100px;
+
+}
+
+
+
+.two {
+
+    background:#8b5cf6;
+
+    bottom:-100px;
+
+    right:-100px;
+
+}
+
+
+
+
+
+
+
+/* Header */
+
+
+header {
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.logo {
+
+    font-size:1.7rem;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+}
+
+
+
+.glass-btn {
+
+
+    background:var(--card);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(20px);
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+
+
+.glass-btn:hover {
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+
+
+
+/* Main */
+
+
+main {
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+
+.hero {
+
+    text-align:center;
+
+    padding:50px 0;
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:
+    clamp(2.5rem,7vw,5rem);
+
+    font-weight:900;
+
+
+    background:
+    linear-gradient(
+    90deg,
+    #fff,
+    #60a5fa,
+    #a78bfa
+    );
+
+
+    background-clip:text;
+
+    color:transparent;
+
+
+}
+
+
+
+body.light .hero h1 {
+
+    background:
+    linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed
+    );
+
+    background-clip:text;
+
+}
+
+
+
+.hero p {
+
+    margin-top:15px;
+
+    color:var(--muted);
+
+    font-size:1.2rem;
+
+}
+
+
+
+
+
+
+
+/* Statistics */
+
+
+.stats {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.stat-card {
+
+
+    background:var(--card);
+
+    backdrop-filter:blur(25px);
+
+
+    border:
+    1px solid var(--border);
+
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    text-align:center;
+
+
+    box-shadow:var(--shadow);
+
+
+    transition:var(--transition);
+
+}
+
+
+
+.stat-card:hover {
+
+
+    transform:
+    translateY(-10px);
+
+
+}
+
+
+
+.stat-card h2 {
+
+
+    font-size:2.3rem;
+
+    color:var(--primary);
+
+}
+
+
+
+
+
+
+/* Subjects */
+
+
+.subjects-container {
+
+
+    margin-top:40px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(
+    auto-fit,
+    minmax(320px,1fr)
+    );
+
+
+    gap:25px;
+
+}
+
+
+
+
+
+
+/* Subject Card */
+
+
+.subject-card {
+
+
+    background:var(--card);
+
+
+    backdrop-filter:blur(30px);
+
+
+    border:
+    1px solid var(--border);
+
+
+    border-radius:var(--radius);
+
+
+    padding:25px;
+
+
+    box-shadow:var(--shadow);
+
+
+    animation:
+    fade .5s;
+
+
+    transition:var(--transition);
+
+}
+
+
+
+.subject-card:hover {
+
+    transform:
+    translateY(-8px);
+
+}
+
+
+
+
+@keyframes fade {
+
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+
+/* Circular Progress */
+
+
+.circle {
+
+    position:relative;
+
+}
+
+
+
+.circle svg {
+
+    filter:
+    drop-shadow(
+    0 0 15px var(--primary)
+    );
+
+}
+
+
+
+.circle-progress {
+
+    stroke:
+    var(--primary);
+
+    transition:.5s;
+
+}
+
+
+
+
+
+
+
+/* Buttons */
+
+
+button {
+
+
+    border:none;
+
+    cursor:pointer;
+
+
+    padding:
+    12px 18px;
+
+
+    border-radius:16px;
+
+
+    color:white;
+
+
+    transition:var(--transition);
+
+
+}
+
+
+
+button:hover {
+
+    transform:
+    translateY(-3px)
+    scale(1.04);
+
+}
+
+
+
+.start,
+.floating-btn {
+
+    background:
+    linear-gradient(
+    135deg,
+    #3b82f6,
+    #2563eb
+    );
+
+}
+
+
+
+.pause {
+
+    background:var(--warning);
+
+}
+
+
+
+.resume {
+
+    background:var(--success);
+
+}
+
+
+
+.reset {
+
+    background:#64748b;
+
+}
+
+
+
+.delete {
+
+    background:var(--danger);
+
+}
+
+
+
+
+
+
+
+/* Floating Add Button */
+
+
+.floating-btn {
+
+
+    position:fixed;
+
+
+    right:35px;
+
+    bottom:35px;
+
+
+    width:70px;
+
+    height:70px;
+
+
+    border-radius:50%;
+
+
+    font-size:2rem;
+
+
+    box-shadow:
+    0 20px 50px
+    rgba(59,130,246,.5);
+
+
+}
+
+
+
+
+
+
+
+/* Modal */
+
+
+.modal {
+
+
+    position:fixed;
+
+    inset:0;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+    rgba(0,0,0,.6);
+
+
+    backdrop-filter:blur(15px);
+
+
+    z-index:100;
+
+
+}
+
+
+
+.hidden {
+
+    display:none;
+
+}
+
+
+
+.modal-box {
+
+
+    width:90%;
+
+    max-width:450px;
+
+
+    background:var(--card);
+
+
+    backdrop-filter:blur(30px);
+
+
+    border:
+    1px solid var(--border);
+
+
+    padding:35px;
+
+
+    border-radius:30px;
+
+
+    animation:
+    popup .35s;
+
+}
+
+
+
+@keyframes popup {
+
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+
+
+input {
+
+
+    width:100%;
+
+
+    padding:15px;
+
+
+    margin-top:15px;
+
+
+    background:
+    rgba(255,255,255,.08);
+
+
+    border:
+    1px solid var(--border);
+
+
+    color:var(--text);
+
+
+    border-radius:16px;
+
+
+}
+
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:900px){
+
+
+.stats{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+
+header{
+
+width:85%;
+
+}
+
+
+.subject-card{
+
+padding:20px;
+
+}
+
+
+.floating-btn{
+
+right:20px;
+
+bottom:20px;
+
+}
+
+
+}
