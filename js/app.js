@@ -558,3 +558,21 @@ applyLanguage();
 renderSubjects();
 
 updateStatistics();
+
+const addBtn = document.getElementById("addButton");
+const modal = document.getElementById("addModal");
+const closeBtn = document.getElementById("closeModal");
+
+
+addBtn.onclick = () => {
+
+    modal.classList.remove("hidden");
+
+};
+
+
+closeBtn.onclick = () => {
+
+    modal.classList.add("hidden");
+
+};
